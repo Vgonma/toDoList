@@ -1,5 +1,6 @@
 /* eslint-disable */
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,7 +14,7 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-  modules: {
+  module: {
     rules: [
       {
         test: /\.css$/i,

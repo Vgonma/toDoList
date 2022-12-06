@@ -95,6 +95,10 @@ body {
   padding: 0.3rem 0;
 }
 
+.task:focus {
+  background-color: rgb(247, 238, 119);
+}
+
 .task > * {
   display: inline-block;
   margin: 0 5px;
