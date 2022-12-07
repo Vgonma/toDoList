@@ -26,14 +26,21 @@ export default class ToDoList {
     this.taskList.splice(index, 1);
   }
 
+  updateTaskIndex() {
+    this.sortTasks();
+    for (let i = 0; i < this.taskList.length; i += 1) {
+      this.taskList[i].setIndex = i;
+    }
+  }
+
   removeCompleted() {
     const arr = [];
     for (let i = 0; i < this.taskList.length; i += 1) {
       if (!this.taskList[i].isCompleted()) {
         arr.push(this.taskList[i]);
-        arr[arr.length - 1].setIndex = arr.length - 1;
       }
     }
+    this.taskList = arr;
   }
 
   sortTasks() {
@@ -45,13 +52,6 @@ export default class ToDoList {
           this.taskList[j] = temp;
         }
       }
-    }
-  }
-
-  updateTaskIndex() {
-    this.sortTasks();
-    for (let i = 0; i < this.taskList.length; i += 1) {
-      this.taskList[i].setIndex = i;
     }
   }
 }
