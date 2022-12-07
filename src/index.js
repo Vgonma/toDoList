@@ -2,24 +2,30 @@ import './style.css';
 import ToDoList from './modules/ToDoList.js';
 import Task from './modules/Task.js';
 import createTaskDOM from './modules/taskEvents.js';
+import * as storage from './modules/localStorageFunctions.js';
 
 const toDoList = new ToDoList();
+// test variables if the list is empty
 toDoList.addTask(new Task('task 1', 3));
 toDoList.addTask(new Task('task 2', 2));
 toDoList.addTask(new Task('task 3', 1));
 toDoList.addTask(new Task('task 4', 0));
+
+toDoList.taskList = storage.load('tasks');
+
 const taskList = document.querySelector('.to-do-list');
 
-function populateList(toDoList) {
-  toDoList.sortTasks();
-  for (let i = 0; i < toDoList.taskList.length; i += 1) {
+function populateList(emptyList) {
+  emptyList.sortTasks();
+  for (let i = 0; i < emptyList.taskList.length; i += 1) {
     taskList.appendChild(
-      createTaskDOM(toDoList.taskList[i].getDescription),
+      createTaskDOM(emptyList.taskList[i].description),
     );
   }
 }
 
 populateList(toDoList);
+storage.save('tasks', toDoList.taskList);
 
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
@@ -28,22 +34,27 @@ form.addEventListener('submit', (e) => {
   if (!desc) return;
   taskList.appendChild(createTaskDOM(desc));
   form.children[0].value = '';
+  const newTask = new Task(desc, toDoList.taskList.length);
+  toDoList.addTask(newTask);
+  storage.save('tasks', toDoList.taskList);
 });
 
 const checkboxes = document.querySelectorAll('.checkbox');
 checkboxes.forEach((box) => {
   box.addEventListener('change', () => {
     const boxIndex = Array.prototype.indexOf.call(checkboxes, box);
-    toDoList.taskList[boxIndex].toggleCompleted();
+    toDoList.taskList[boxIndex].completed = !toDoList.taskList[boxIndex].completed;
   });
 });
 
 const clearAll = document.querySelector('.clear-all');
 clearAll.addEventListener('click', () => {
   toDoList.removeCompleted();
-  for (let i = 0; i < taskList.children.length; i += 1) {
+  const len = taskList.children.length;
+  for (let i = len - 1; i >= 0; i -= 1) {
     if (taskList.children[i].children[0].checked) {
       taskList.removeChild(taskList.children[i]);
     }
   }
+  storage.save('tasks', toDoList.taskList);
 });

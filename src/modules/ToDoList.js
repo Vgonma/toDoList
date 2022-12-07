@@ -36,7 +36,7 @@ export default class ToDoList {
   removeCompleted() {
     const arr = [];
     for (let i = 0; i < this.taskList.length; i += 1) {
-      if (!this.taskList[i].isCompleted()) {
+      if (!this.taskList[i].completed) {
         arr.push(this.taskList[i]);
       }
     }
