@@ -95,7 +95,7 @@ body {
   padding: 0.3rem 0;
 }
 
-.task:focus {
+.focus {
   background-color: rgb(247, 238, 119);
 }
 
@@ -110,7 +110,9 @@ body {
   height: 12px;
 }
 
-.task > p {
+.task-description {
+  border: none;
+  background-color: transparent;
   flex: 20;
   font-size: 12px;
   outline: none;

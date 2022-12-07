@@ -31,6 +31,10 @@ export default class Task {
     return this.index;
   }
 
+  isCompleted() {
+    return this.completed;
+  }
+
   toggleCompleted() {
     this.completed = !this.completed;
   }
