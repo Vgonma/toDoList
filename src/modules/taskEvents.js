@@ -33,7 +33,9 @@ export default function createTaskDOM(desc) {
   const trashButton = newTask.children[2];
   trashButton.addEventListener('click', () => {
     if (trashButton.parentElement.parentElement) {
-      trashButton.parentElement.parentElement.removeChild(trashButton.parentElement);
+      setTimeout(() => {
+        trashButton.parentElement.parentElement.removeChild(trashButton.parentElement);
+      }, 10);
     }
   });
 

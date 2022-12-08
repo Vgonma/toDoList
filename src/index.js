@@ -58,3 +58,18 @@ clearAll.addEventListener('click', () => {
   }
   storage.save('tasks', toDoList.taskList);
 });
+
+const trashCans = document.querySelectorAll('#trash');
+trashCans.forEach((bin) => {
+  bin.addEventListener('click', () => {
+    const index = (Array.prototype.indexOf.call(
+      bin.parentElement.parentElement.children, bin.parentElement,
+    ));
+    toDoList.removeTask(index);
+    storage.save('tasks', toDoList.taskList);
+  });
+});
+
+const reload = document.querySelector('.reload');
+reload.addEventListener('click', () => {
+});

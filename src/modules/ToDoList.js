@@ -34,13 +34,12 @@ export default class ToDoList {
   }
 
   removeCompleted() {
-    const arr = [];
-    for (let i = 0; i < this.taskList.length; i += 1) {
-      if (!this.taskList[i].completed) {
-        arr.push(this.taskList[i]);
+    const len = this.taskList.length;
+    for (let i = len - 1; i >= 0; i -= 1) {
+      if (this.taskList[i].completed) {
+        this.removeTask(i);
       }
     }
-    this.taskList = arr;
   }
 
   sortTasks() {
