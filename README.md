@@ -23,11 +23,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Awesome Books <a name="about-project"></a>
+# 📖 To Do List <a name="about-project"></a>
 
 
 
-**Awesome books** is a simple website that displays a list of books and allows you to add and remove books from that list. By building this application, we managed data using JavaScript. Thanks to that the website is more interactive. We also used a medium-fidelity wireframe to build the UI. 
+**To Do List** To Do lList is a simple web application that displays a list of tasks and allows you to add new ones and remove completed ones from that list.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -67,7 +67,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://vgonma.github.io/toDoList)
+- [Live Demo Link](https://vgonma.github.io/toDoList/dist/index.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
