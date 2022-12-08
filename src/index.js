@@ -5,13 +5,13 @@ import createTaskDOM from './modules/taskEvents.js';
 import * as storage from './modules/localStorageFunctions.js';
 
 const toDoList = new ToDoList();
-// test variables if the list is empty
-toDoList.addTask(new Task('task 1', 3));
-toDoList.addTask(new Task('task 2', 2));
-toDoList.addTask(new Task('task 3', 1));
-toDoList.addTask(new Task('task 4', 0));
-
 toDoList.taskList = storage.load('tasks');
+
+// test variables if the list is empty
+// toDoList.addTask(new Task('task 1', 3));
+// toDoList.addTask(new Task('task 2', 2));
+// toDoList.addTask(new Task('task 3', 1));
+// toDoList.addTask(new Task('task 4', 0));
 
 const taskList = document.querySelector('.to-do-list');
 
@@ -72,4 +72,5 @@ trashCans.forEach((bin) => {
 
 const reload = document.querySelector('.reload');
 reload.addEventListener('click', () => {
+  populateList(toDoList);
 });

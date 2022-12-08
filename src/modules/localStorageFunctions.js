@@ -3,6 +3,8 @@ export function save(key, object) {
 }
 
 export function load(key) {
-  if (!localStorage.getItem(key)) return null;
+  if (!localStorage.getItem(key)) {
+    localStorage.setItem(key, JSON.stringify([]));
+  }
   return JSON.parse(localStorage.getItem(key));
 }
