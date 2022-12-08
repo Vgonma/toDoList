@@ -88,18 +88,23 @@ NodeJs
 Clone this repository to your desired folder:
 
 
-```cd my-folder
-  git clone git@github.com:Vgonma/toDoList.git
+```cd my-folder   
+    git clone git@github.com:Vgonma/toDoList.git
 ```
 Install dependencies:
-```npm i -y
+```
+    npm i -y
 ```
 
 Build the webapp:
-```npm run build```
+```
+    npm run build
+```
 
 You can use a live server for debuging using the command
-```npm run start```
+```
+    npm run start
+```
 
 ### Usage
 
