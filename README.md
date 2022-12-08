@@ -27,7 +27,9 @@
 
 
 
-**To Do lList** is a simple web application that displays a list of tasks and allows you to add new ones and remove completed ones from that list.
+
+**To Do List** To Do lList is a simple web application that displays a list of tasks and allows you to add new ones and remove completed ones from that list.
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -67,7 +69,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://vgonma.github.io/toDoList/)
+
+- [Live Demo Link](https://vgonma.github.io/toDoList/dist/index.html)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,15 +85,29 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-Any web browser
+NodeJs
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 
-```cd my-folder
-  git clone git@github.com:Vgonma/toDoList.git
+```cd my-folder   
+    git clone git@github.com:Vgonma/toDoList.git
+```
+Install dependencies:
+```
+    npm i -y
+```
+
+Build the webapp:
+```
+    npm run build
+```
+
+You can use a live server for debuging using the command
+```
+    npm run start
 ```
 
 ### Usage
