@@ -27,7 +27,9 @@
 
 
 
+
 **To Do List** To Do lList is a simple web application that displays a list of tasks and allows you to add new ones and remove completed ones from that list.
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -67,7 +69,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
+
 - [Live Demo Link](https://vgonma.github.io/toDoList/dist/index.html)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
