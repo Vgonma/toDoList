@@ -29,17 +29,12 @@ export default class ToDoList {
   updateTaskIndex() {
     this.sortTasks();
     for (let i = 0; i < this.taskList.length; i += 1) {
-      this.taskList[i].setIndex = i;
+      this.taskList[i].index = i;
     }
   }
 
   removeCompleted() {
-    const len = this.taskList.length;
-    for (let i = len - 1; i >= 0; i -= 1) {
-      if (this.taskList[i].completed) {
-        this.removeTask(i);
-      }
-    }
+    this.taskList = this.taskList.filter((task) => !task.completed);
   }
 
   sortTasks() {
