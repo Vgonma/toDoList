@@ -81,7 +81,7 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-Any web browser
+NodeJs
 
 ### Setup
 
@@ -91,6 +91,15 @@ Clone this repository to your desired folder:
 ```cd my-folder
   git clone git@github.com:Vgonma/toDoList.git
 ```
+Install dependencies:
+```npm i -y
+```
+
+Build the webapp:
+```npm run build```
+
+You can use a live server for debuging using the command
+```npm run start```
 
 ### Usage
 
